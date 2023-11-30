@@ -23,6 +23,10 @@ api.use(responseTime)
 // api.use(auditLogger)
 
 
+api.get('/health', (_, res) => {
+  return res.status(200).send()
+})
+
 api.get('/metrics', async (_req, res) => {
   try {
     res.set('Content-Type', register.contentType)
